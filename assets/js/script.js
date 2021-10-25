@@ -25,6 +25,13 @@ searchBtnEl.addEventListener("click", function () {
   var search = searchCityEl.value;
   var li = document.createElement("li");
   li.append(search);
+  searchHistory.push(search);
   document.getElementById("search-history").appendChild(li);
   localStorage.setItem("allSearches", JSON.stringify(searchHistory));
+});
+
+clearBtnEl.addEventListener("click", function () {
+  localStorage.clear();
+  searchHistory = [];
+  document.getElementById("search-history").innerHTML = " ";
 });
