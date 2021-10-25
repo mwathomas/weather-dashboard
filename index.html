@@ -20,16 +20,17 @@
       <div class="col-5">
         <h2>Search for a city:</h2>
         <input id="search-city" type="text" />
-        <button class="btn btn-primary" type="button" id="search">
+        <button class="btn btn-primary" type="button" id="searchBtn">
           Search
         </button>
-        <button class="btn btn-primary" type="button" id="clear">Clear</button>
-        <div id="search-history">search history</div>
+        <button class="btn btn-primary" type="button" id="clearBtn">Clear</button>
+       <div> <b>search history</b> <ul id="search-history" style="list-style: none"></ul>
+       </div>
       </div>
       <div class="col-6">
         <div class="row">
         <div class="col-12" id="current-weather">
-          <h3 id="city">city</h3>
+          <h3 id="city-name">city</h3>
           <img
             src="current-img"
             alt="photo of current weather in searched city"
