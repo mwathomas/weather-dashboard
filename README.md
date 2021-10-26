@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is planner that updates the date according to the current time. It also highlights the hour blocks that have passed, are current, and are in the future in different colors.
+This project is a searchable page that allows you to find the weather for any major city.
 
 ## Installation
 
@@ -10,13 +10,12 @@ Open the script.js, style.css and index.html files in VS Code.
 
 ## Usage
 
-Type your event in the form for each hour block. You can see the current date in the header and what the next event is based on the highlighted time.
-
-![Final Output](assets/images/finalpage.jpg)
+Type your preferred city in the search bar and press the search button. The current weather will come up and
+![Final Output](assets/images/unfinishedpage.jpg)
 
 [a link] https://mwathomas.github.io/weather-dashboard/
 
-Next steps to be built out could be different days on different pages.
+Next steps to be built out might be ability to compare multiple cities at a time or see hourly weather.
 
 ## Credits
 
