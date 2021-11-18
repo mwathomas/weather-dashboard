@@ -10,8 +10,9 @@ Open the script.js, style.css and index.html files in VS Code.
 
 ## Usage
 
-Type your preferred city in the search bar and press the search button. The current weather will come up and
-![Final Output](assets/images/unfinishedpage.jpg)
+Type your preferred city in the search bar and press the search button. The current weather will come up, as well as a forecast for the next days. The search history is stored but can be cleared.
+
+![Final Output](assets/images/finalpage.jpg)
 
 [a link] https://mwathomas.github.io/weather-dashboard/
 

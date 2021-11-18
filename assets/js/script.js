@@ -11,9 +11,13 @@ var humidityEl = document.querySelector("#humidity");
 var f1El = document.querySelector("#forecast-date1");
 var f2El = document.querySelector("#forecast-date2");
 var f3El = document.querySelector("#forecast-date3");
+var f4El = document.querySelector("#forecast-date4");
+var f5El = document.querySelector("#forecast-date5");
 var f1imgEl = document.querySelector("#forecast-img1");
 var f2imgEl = document.querySelector("#forecast-img2");
 var f3imgEl = document.querySelector("#forecast-img3");
+var f4imgEl = document.querySelector("#forecast-img4");
+var f5imgEl = document.querySelector("#forecast-img5");
 
 //pull history from local storage
 var searchHistory = JSON.parse(localStorage.getItem("allSearches"));
@@ -88,7 +92,7 @@ function pullWeather(city) {
       method: "GET",
     }).then(function (response) {
       console.log(response);
-      var tomorrow = new Date(response.list[2].dt * 1000);
+      var tomorrow = new Date(response.list[6].dt * 1000);
       var oneday = tomorrow.getDate();
       var onemonth = tomorrow.getMonth() + 1;
       f1El.innerHTML = onemonth + "/" + oneday;
@@ -96,7 +100,7 @@ function pullWeather(city) {
       var iconurl = "http://openweathermap.org/img/w/" + iconNumber + ".png";
       f1imgEl.setAttribute("src", iconurl);
       f1imgEl.setAttribute("alt", response.list[0].weather[0].description);
-      var nextDay = new Date(response.list[16].dt * 1000);
+      var nextDay = new Date(response.list[18].dt * 1000);
       var day2 = nextDay.getDate();
       var month2 = nextDay.getMonth() + 1;
       f2El.innerHTML = month2 + "/" + day2;
@@ -108,13 +112,29 @@ function pullWeather(city) {
       var day3 = nextDay2.getDate();
       var month3 = nextDay2.getMonth() + 1;
       f3El.innerHTML = month3 + "/" + day3;
-      iconNumber2 = response.list[2].weather[0].icon;
-      var iconurl2 = "http://openweathermap.org/img/w/" + iconNumber2 + ".png";
-      f3imgEl.setAttribute("src", iconurl2);
+      iconNumber3 = response.list[2].weather[0].icon;
+      var iconurl3 = "http://openweathermap.org/img/w/" + iconNumber3 + ".png";
+      f3imgEl.setAttribute("src", iconurl3);
       f3imgEl.setAttribute("alt", response.list[2].weather[0].description);
+      var nextDay3 = new Date(response.list[34].dt * 1000);
+      var day4 = nextDay3.getDate();
+      var month4 = nextDay3.getMonth() + 1;
+      f4El.innerHTML = month4 + "/" + day4;
+      iconNumber4 = response.list[3].weather[0].icon;
+      var iconurl4 = "http://openweathermap.org/img/w/" + iconNumber4 + ".png";
+      f4imgEl.setAttribute("src", iconurl4);
+      f4imgEl.setAttribute("alt", response.list[3].weather[0].description);
+      var nextDay4 = new Date(response.list[38].dt * 1000);
+      var day5 = nextDay4.getDate();
+      var month5 = nextDay4.getMonth() + 1;
+      f5El.innerHTML = month5 + "/" + day5;
+      iconNumber5 = response.list[4].weather[0].icon;
+      var iconurl5 = "http://openweathermap.org/img/w/" + iconNumber5 + ".png";
+      f5imgEl.setAttribute("src", iconurl5);
+      f5imgEl.setAttribute("alt", response.list[4].weather[0].description);
     });
     //return response.json();
   });
 }
 
-var kelvinToFahrenheit = (kelvin) => Math.floor((kelvin - 273) * 1.8 - 32);
+var kelvinToFahrenheit = (kelvin) => Math.floor((kelvin - 273) * 1.8 + 32);
